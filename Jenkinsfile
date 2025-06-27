@@ -4,7 +4,7 @@ stages{
     stage("GitHub checkout....") {
         steps {
             script {
-                git branch: 'main', url: 'https://github.com/alokaneunice/flask-ap.git'
+                git branch: 'main', url: 'https://github.com/alokaneunice/flask-app.git'
             }
         }
     }
@@ -16,6 +16,7 @@ stages{
         }
     }
     stage("push image to DockerHub"){
+
         steps{
             script {
                 withCredentials([string(credentialsId: 'DOCKERID', variable: 'DOCKERID')]) {
